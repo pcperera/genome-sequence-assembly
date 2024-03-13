@@ -17,6 +17,7 @@
 
 | File                                  | Description                             |
 |---------------------------------------|-----------------------------------------|
+| olc-assembler.ipynb                   | OLC assembly generation notebook        |
 | results/olc_assembled_sequences.fasta | OLC assembled genome                    |
 | data/wildtype.fna.amb                 | Generated from "bwa index wildtype.fna" |
 | data/wildtype.fna.ann                 | Generated from "bwa index wildtype.fna" |
