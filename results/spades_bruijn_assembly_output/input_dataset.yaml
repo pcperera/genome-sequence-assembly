@@ -1,0 +1,7 @@
+- "left reads":
+  - "/home/priyanka/Documents/GitHub/genome-sequence-assembly/data/mutant_R1.fastq"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/home/priyanka/Documents/GitHub/genome-sequence-assembly/data/mutant_R2.fastq"
+  "type": "paired-end"

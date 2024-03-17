@@ -1,0 +1,10 @@
+[M::mm_idx_gen::0.004*0.35] collected minimizers
+[M::mm_idx_gen::0.005*1.10] sorted minimizers
+[M::main::0.005*1.10] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.006*1.09] mid_occ = 200
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.006*1.09] distinct minimizers: 19495 (99.47% are singletons); average occurrences: 1.010; average spacing: 10.030; total length: 197394
+[M::worker_pipeline::0.027*1.02] mapped 6 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: /usr/bin/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs -t 4 /home/priyanka/Documents/GitHub/genome-sequence-assembly/results/quast_results/results_2024_03_17_22_54_56/quast_corrected_input/wildtype.fna /home/priyanka/Documents/GitHub/genome-sequence-assembly/results/quast_results/results_2024_03_17_22_54_56/quast_corrected_input/contigs.fasta
+[M::main] Real time: 0.028 sec; CPU: 0.029 sec; Peak RSS: 0.050 GB
