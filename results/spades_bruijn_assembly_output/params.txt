@@ -1,0 +1,37 @@
+Command line: /home/priyanka/etc/SPAdes-3.15.5/bin/spades.py	--pe1-1	/home/priyanka/Documents/GitHub/genome-sequence-assembly/data/mutant_R1.fastq	--pe1-2	/home/priyanka/Documents/GitHub/genome-sequence-assembly/data/mutant_R2.fastq	-o	/home/priyanka/Documents/GitHub/genome-sequence-assembly/results/spades_bruijn_assembly_output	
+
+System information:
+  SPAdes version: 3.15.5
+  Python version: 3.8.10
+  OS: Linux-6.5.0-25-generic-x86_64-with-glibc2.29
+
+Output dir: /home/priyanka/Documents/GitHub/genome-sequence-assembly/results/spades_bruijn_assembly_output
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/priyanka/Documents/GitHub/genome-sequence-assembly/data/mutant_R1.fastq']
+      right reads: ['/home/priyanka/Documents/GitHub/genome-sequence-assembly/data/mutant_R2.fastq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /home/priyanka/Documents/GitHub/genome-sequence-assembly/results/spades_bruijn_assembly_output/tmp
+  Threads: 16
+  Memory limit (in Gb): 62
+

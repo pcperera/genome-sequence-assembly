@@ -1,29 +1,22 @@
-# Steps used for OLC assembling the mutant_R1.fastq and mutant_R2.fastq
+# Steps used for Bruijn graph assembling the mutant_R1.fastq and mutant_R2.fastq
 
-* Run olc-assembler.ipynb
-
-# Steps use for assembly coverage calculation
-
-* cd data
-* bwa index wildtype.fna
-* bwa mem ../data/wildtype.fna olc_assembled_sequences.fasta > alignment.sam
+* I used the https://github.com/ablab/spades tool to perform Bruijn graph assembly. SPAdes - St. Petersburg genome assembler - is an assembly toolkit containing various assembly pipelines.
+* I followed the steps in https://github.com/ablab/spades to install spades on my Ubuntu laptop.
 * cd results
-* bwa mem ../data/wildtype.fna olc_assembled_sequences.fasta > alignment.sam
-* samtools view -bS alignment.sam | samtools sort -o alignment.sorted.bam
-* bedtools genomecov -ibam alignment.sorted.bam -g ../data/wildtype.fna > coverage.txt
+* spades.py --pe1-1 ../data/mutant_R1.fastq --pe1-2 ../data/mutant_R2.fastq -o spades_bruijn_assembly_output (this will create assembly output in the results/spades_bruijn_assembly_output directory).
+
+# Steps used for N50 and assembly coverage summary statistics calculation
+
+* I used https://github.com/ablab/spades tool to generate the summary statistics
+* pip install quast
+* quast.py spades_bruijn_assembly_output/contigs.fasta  -r ../data/wildtype.fna
 
 
 # Files
 
-| File                                  | Description                             |
-|---------------------------------------|-----------------------------------------|
-| olc-assembler.ipynb                   | OLC assembly generation notebook        |
-| results/olc_assembled_sequences.fasta | OLC assembled genome                    |
-| data/wildtype.fna.amb                 | Generated from "bwa index wildtype.fna" |
-| data/wildtype.fna.ann                 | Generated from "bwa index wildtype.fna" |
-| data/wildtype.fna.bwt                 | Generated from "bwa index wildtype.fna" |
-| data/wildtype.fna.pac                 | Generated from "bwa index wildtype.fna" |
-| data/wildtype.fna.sa                  | Generated from "bwa index wildtype.fna" |
-| results/alignment.sam                 | Generated from samtools                 |
-| results/alignment.sorted.bam          | Generated from samtools                 |
-| results/coverage.txt                  | OLC assembly coverage output            |
+| File                                  | Description                                                                              |
+|---------------------------------------|------------------------------------------------------------------------------------------|
+| data                                  | contains the original mutant_R1.fastq, mutant_R2.fastq and reference genome wildtype.fna |
+| results/spades_bruijn_assembly_output | spades tool based bruijn assembly output                                                 |
+| results/quast_results                 | quast tool based statistics                                                              |
+| results/quast_results/report.txt      | quast tool summary report                                                                |
